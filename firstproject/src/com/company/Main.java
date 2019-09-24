@@ -1,7 +1,6 @@
 package com.company;
 
-// package MAF;
-// import java.io.*;
+import com.company.exts.*;
 
 import library.classes.*;
 
@@ -100,10 +99,87 @@ public class Main {
         // название класса = ссылочному типу
         // () - конструктор
         // test - объект
-        NewClass test = new NewClass(6);
+        // NewClass test = new NewClass(6);
         // вызов свойств и методов
         // вызов происходит только из объектов
-        int y = test.getI(6);
-        System.out.println(y);
+        // int y = test.getI(6);
+        // System.out.println(y);
+
+        // ConstructorClass cc = new ConstructorClass(3, "hi");
+        // System.out.println(cc.CompleteStroke());
+
+        // // overflow methods
+        // OverflowMethod overflowmethod = new OverflowMethod();
+        // System.out.println(overflowmethod.get(false, ""));
+
+        // overflow constructor
+        // OverflowMethod overflowmethod = new OverflowMethod(23);
+
+        // наследование
+        ChildClass kid = new ChildClass();
+        NextChildClass grandkid = new NextChildClass();
+
+        // объекты как типы данных (ссылочные типы)
+    }
+}
+
+class ConstructorClass {
+    private int i;
+    private String s;
+
+    ConstructorClass(int i, String s) {
+        this.i = i;
+        this.s = s;
+    }
+
+    public int getI() {
+        return i;
+    }
+
+    public String getS() {
+        return s;
+    }
+
+    public String CompleteStroke() {
+        return s.repeat(i);
+    }
+}
+
+class OverflowMethod {
+
+    // @Contract(pure = true)
+    OverflowMethod() {
+
+    }
+
+    // @Contract(pure = true)
+    OverflowMethod(int i) {
+
+    }
+
+    public int get() {
+        return 1;
+    }
+
+    public int get(int i) {
+        return 1 + i;
+    }
+
+    public int get(String str) {
+        return str.length();
+    }
+
+    public String get(boolean b) {
+        if (b)
+            return "good answer";
+        else
+            return "bad answer";
+    }
+
+    public Object get(boolean b, String str) {
+        if (b)
+            return str + "overflow";
+        else
+            return null;
     }
 }
