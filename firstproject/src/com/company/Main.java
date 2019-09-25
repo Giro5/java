@@ -1,7 +1,5 @@
 package com.company;
 
-import com.company.exts.*;
-
 import library.classes.*;
 
 public class Main {
@@ -116,10 +114,49 @@ public class Main {
         // OverflowMethod overflowmethod = new OverflowMethod(23);
 
         // наследование
-        ChildClass kid = new ChildClass();
-        NextChildClass grandkid = new NextChildClass();
+        // ChildClass kid = new ChildClass();
+        // NextChildClass grandkid = new NextChildClass();
 
         // объекты как типы данных (ссылочные типы)
+        // OverflowMethod ov = new OverflowMethod();
+        // int ot = ov.get(new Otype());
+        // System.out.println(ot);
+        // Otype otype = new Otype();
+        // otype.i = 3;
+        // ot = ov.get(otype);
+        // System.out.println(ot);
+
+        // example oop
+        // TypeValue typeValue = new TypeValue(false, (byte) 5);
+        // WorkClass wc = new WorkClass(typeValue);
+
+        // обобщеные типы
+        TClass<String, String> tc = new TClass<>("hi", "hello");
+        TClass<Integer, Number> tc2 = new TClass<>(5, 6);
+        TClass<TypeValue, Object> tc3 = new TClass<>(new TypeValue(true, (byte) 5), 7);
+        System.out.println(tc.getT());
+        System.out.println(tc2.getT());
+        System.out.println(tc3.getT().bo);
+        CLimit<TypeDefault> cl = new CLimit<>();
+        CLimit<TypeValue> cl2 = new CLimit<>();
+    }
+}
+
+class CLimit<T extends TypeDefault> {
+
+}
+
+class TClass<T, TT> {
+    private T t;
+    private TT tt;
+
+    TClass(T t, TT tt) {
+        this.t = t;
+        this.tt = tt;
+    }
+
+    public T getT() {
+        return t;
     }
 }
 
@@ -145,6 +182,10 @@ class ConstructorClass {
     }
 }
 
+class Otype {
+    public int i = 1;
+}
+
 class OverflowMethod {
 
     // @Contract(pure = true)
@@ -155,6 +196,10 @@ class OverflowMethod {
     // @Contract(pure = true)
     OverflowMethod(int i) {
 
+    }
+
+    public int get(Otype otype) {
+        return otype.i;
     }
 
     public int get() {
@@ -181,5 +226,43 @@ class OverflowMethod {
             return str + "overflow";
         else
             return null;
+    }
+}
+
+class TypeDefault {
+    public boolean bo;
+    public char ch;
+}
+
+class TypeValue extends TypeDefault {
+    public byte by;
+
+    TypeValue(boolean bo, byte by) {
+        this.bo = bo;
+        this.by = by;
+    }
+}
+
+class WorkClass {
+    private boolean bo;
+    private byte by;
+
+    WorkClass(boolean bo, byte by) {
+        this.by = by;
+        this.bo = bo;
+        System.out.println(write(bo));
+    }
+
+    WorkClass(TypeValue typeValue) {
+        this.by = typeValue.by;
+        this.bo = typeValue.bo;
+        System.out.println(write(bo));
+    }
+
+    private String write(boolean bo) {
+        if (bo)
+            return "launch included service, with code " + by;
+        else
+            return "launch included service is canceled, with code " + by;
     }
 }
