@@ -1,6 +1,6 @@
 package com.company;
 
-import library.classes.*;
+// import library.classes.*;
 
 public class Main {
 
@@ -131,14 +131,15 @@ public class Main {
         // WorkClass wc = new WorkClass(typeValue);
 
         // обобщеные типы
-        TClass<String, String> tc = new TClass<>("hi", "hello");
-        TClass<Integer, Number> tc2 = new TClass<>(5, 6);
-        TClass<TypeValue, Object> tc3 = new TClass<>(new TypeValue(true, (byte) 5), 7);
-        System.out.println(tc.getT());
-        System.out.println(tc2.getT());
-        System.out.println(tc3.getT().bo);
-        CLimit<TypeDefault> cl = new CLimit<>();
-        CLimit<TypeValue> cl2 = new CLimit<>();
+        // TClass<String, String> tc = new TClass<>("hi", "hello");
+        // TClass<Integer, Number> tc2 = new TClass<>(5, 6);
+        // TClass<TypeValue, Object> tc3 = new TClass<>(new TypeValue(true, (byte) 5),
+        // 7);
+        // System.out.println(tc.getT());
+        // System.out.println(tc2.getT());
+        // System.out.println(tc3.getT().bo);
+        // CLimit<TypeDefault> cl = new CLimit<>();
+        // CLimit<TypeValue> cl2 = new CLimit<>();
     }
 }
 
@@ -157,6 +158,10 @@ class TClass<T, TT> {
 
     public T getT() {
         return t;
+    }
+
+    public TT getTT() {
+        return tt;
     }
 }
 
