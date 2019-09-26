@@ -4,7 +4,7 @@ package com.company;
  * InterfaceClass
  */
 public class InterfaceClass {
-    
+
 }
 
 interface InterfaceBase {
@@ -49,7 +49,6 @@ class NextClass extends AbsBase {
 class NexyClass extends AbsBase {
     @Override
     public int get() {
-        // TODO Auto-generated method stub
         return 0;
     }
 }
