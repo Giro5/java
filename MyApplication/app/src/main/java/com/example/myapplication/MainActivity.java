@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+import android.annotation.SuppressLint;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.widget.SeekBar;
@@ -24,11 +25,13 @@ public class MainActivity extends AppCompatActivity {
         final ConstraintLayout cl = findViewById(R.id.Layout1);
 
         sb3.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @SuppressLint("SetTextI18n")
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 redval = progress;
                 tv.setText(redval.toString() + " " + greenval.toString() + " " + blueval.toString());
                 cl.setBackgroundColor(Color.rgb(redval, greenval, blueval));
+                tv.setTextColor(Color.rgb(255 - redval, 255 - greenval, 255 - blueval));
             }
 
             @Override
@@ -43,11 +46,13 @@ public class MainActivity extends AppCompatActivity {
         });
 
         sb2.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @SuppressLint("SetTextI18n")
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 greenval = progress;
                 tv.setText(redval.toString() + " " + greenval.toString() + " " + blueval.toString());
                 cl.setBackgroundColor(Color.rgb(redval, greenval, blueval));
+                tv.setTextColor(Color.rgb(255 - redval, 255 - greenval, 255 - blueval));
             }
 
             @Override
@@ -62,11 +67,13 @@ public class MainActivity extends AppCompatActivity {
         });
 
         sb1.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @SuppressLint("SetTextI18n")
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 blueval = progress;
                 tv.setText(redval.toString() + " " + greenval.toString() + " " + blueval.toString());
                 cl.setBackgroundColor(Color.rgb(redval, greenval, blueval));
+                tv.setTextColor(Color.rgb(255 - redval, 255 - greenval, 255 - blueval));
             }
 
             @Override

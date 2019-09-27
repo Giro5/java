@@ -7,29 +7,33 @@
         android:layout_height="match_parent"
         tools:context=".MainActivity"
         android:id="@+id/Layout1"
-        app:>
+        android:background="@android:color/black">
 
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Hello World!"
+            android:text="@string/ZerosRGB"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" android:id="@+id/textView"/>
+            app:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/textView"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"/>
     <SeekBar
             android:layout_width="313dp"
-            android:layout_height="38dp"
+            android:layout_height="22dp"
             android:id="@+id/seekBar"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.35000002"
+            app:layout_constraintVertical_bias="0.406"
             android:max="255"/>
     <SeekBar
             android:layout_width="313dp"
-            android:layout_height="38dp"
+            android:layout_height="22dp"
             android:id="@+id/seekBar2"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -39,13 +43,15 @@
             android:max="255"/>
     <SeekBar
             android:layout_width="314dp"
-            android:layout_height="30dp"
-            android:id="@+id/seekBar3" app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_height="22dp"
+            android:id="@+id/seekBar3"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.25"
-            android:max="255"/>
+            app:layout_constraintVertical_bias="0.201"
+            android:max="255"
+            app:layout_constraintHorizontal_bias="0.505"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
