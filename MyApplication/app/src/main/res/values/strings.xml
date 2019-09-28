@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">Chroma Java</string>
     <string name="ZerosRGB">0 0 0</string>
+    <string name="r_g_b">R G B</string>
+    <string name="h_s_v">H S V</string>
 </resources>
