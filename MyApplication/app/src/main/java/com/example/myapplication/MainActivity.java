@@ -25,7 +25,8 @@ public class MainActivity extends AppCompatActivity {
         SeekBar sb3 = findViewById(R.id.seekBar3);
         SeekBar sb2 = findViewById(R.id.seekBar2);
         SeekBar sb1 = findViewById(R.id.seekBar);
-        final TextView tv = findViewById(R.id.textView);
+        final TextView tv1 = findViewById(R.id.textView);
+        final TextView tv2 = findViewById(R.id.textView2);
         final ConstraintLayout cl = findViewById(R.id.Layout1);
 
         sb3.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
@@ -33,9 +34,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 redval = progress;
-                tv.setText(redval.toString() + " " + greenval.toString() + " " + blueval.toString());
+                tv1.setText(redval.toString() + " " + greenval.toString() + " " + blueval.toString());
+                int col = Color.rgb(redval, greenval, blueval);
+                float[] hsv = new float[3];
+                Color.colorToHSV(col, hsv);
+                tv2.setText(hsv[0] + " " + hsv[1] + " " + hsv[2]);
                 cl.setBackgroundColor(Color.rgb(redval, greenval, blueval));
-                tv.setTextColor(Color.rgb(255 - redval, 255 - greenval, 255 - blueval));
+                tv1.setTextColor(Color.rgb(255 - redval, 255 - greenval, 255 - blueval));
             }
 
             @Override
@@ -54,9 +59,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 greenval = progress;
-                tv.setText(redval.toString() + " " + greenval.toString() + " " + blueval.toString());
+                tv1.setText(redval.toString() + " " + greenval.toString() + " " + blueval.toString());
                 cl.setBackgroundColor(Color.rgb(redval, greenval, blueval));
-                tv.setTextColor(Color.rgb(255 - redval, 255 - greenval, 255 - blueval));
+                tv1.setTextColor(Color.rgb(255 - redval, 255 - greenval, 255 - blueval));
             }
 
             @Override
@@ -75,9 +80,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 blueval = progress;
-                tv.setText(redval.toString() + " " + greenval.toString() + " " + blueval.toString());
+                tv1.setText(redval.toString() + " " + greenval.toString() + " " + blueval.toString());
                 cl.setBackgroundColor(Color.rgb(redval, greenval, blueval));
-                tv.setTextColor(Color.rgb(255 - redval, 255 - greenval, 255 - blueval));
+                tv1.setTextColor(Color.rgb(255 - redval, 255 - greenval, 255 - blueval));
             }
 
             @Override

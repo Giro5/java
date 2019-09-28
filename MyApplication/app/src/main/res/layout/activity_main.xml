@@ -21,6 +21,20 @@
             android:textSize="18sp"
             android:textStyle="bold"
             android:textColor="@android:color/white"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ZerosRGB"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:id="@+id/textView2"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintVertical_bias="0.534"/>
     <SeekBar
             android:layout_width="313dp"
             android:layout_height="22dp"
@@ -31,7 +45,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.406"
             android:max="255"
-            android:theme="@style/SeekBarMy"/>
+            android:theme="@style/SeekBarBlue"/>
     <SeekBar
             android:layout_width="313dp"
             android:layout_height="22dp"
@@ -41,7 +55,8 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.3"
-            android:max="255"/>
+            android:max="255"
+            android:theme="@style/SeekBarGreen"/>
     <SeekBar
             android:layout_width="314dp"
             android:layout_height="22dp"
@@ -52,7 +67,8 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.201"
             android:max="255"
-            app:layout_constraintHorizontal_bias="0.505"/>
+            app:layout_constraintHorizontal_bias="0.505"
+            android:theme="@style/SeekBarRed"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
