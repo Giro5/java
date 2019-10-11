@@ -39,8 +39,8 @@ public class MainActivity extends AppCompatActivity {
         final SeekBar sbblue = findViewById(R.id.seekBar);
 
         final SeekBar sbhue = findViewById(R.id.seekBar6);
-        final SeekBar sbsaturation = findViewById(R.id.seekBar5);
-        final SeekBar sbvalue = findViewById(R.id.seekBar4);
+        final SeekBar sbsat = findViewById(R.id.seekBar5);
+        final SeekBar sbval = findViewById(R.id.seekBar4);
 
         sbred.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @RequiresApi(api = Build.VERSION_CODES.N)
@@ -49,29 +49,31 @@ public class MainActivity extends AppCompatActivity {
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 redval = progress;
 
-                cl.setBackgroundColor(Color.rgb(redval, greenval, blueval));
+                if(fromUser) {
+                    int col = Color.rgb(redval, greenval, blueval);
+                    int altcol = Color.rgb(255 - redval, 255 - greenval, 255 - blueval);
+                    float[] hsv = new float[3];
+                    Color.colorToHSV(col, hsv);
 
-                int col = Color.rgb(redval, greenval, blueval);
-                int altcol = Color.rgb(255 - redval, 255 - greenval, 255 - blueval);
-                float[] hsv = new float[3];
-                Color.colorToHSV(col, hsv);
+                    cl.setBackgroundColor(col);
 
-                tv1.setText(redval + " " + greenval + " " + blueval);
-                tv1.setTextColor(altcol);
+                    tv1.setText(redval + " " + greenval + " " + blueval);
+                    tv1.setTextColor(altcol);
 
-                hueval = Math.round(hsv[0]);
-                saturationval = Math.round(hsv[1] * 100);
-                valueval = Math.round(hsv[2] * 100);
+                    hueval = Math.round(hsv[0]);
+                    saturationval = Math.round(hsv[1] * 100);
+                    valueval = Math.round(hsv[2] * 100);
 
-                tv2.setText(hueval + " " + saturationval + " " + valueval);
-                tv2.setTextColor(altcol);
+                    tv2.setText(hueval + " " + saturationval + " " + valueval);
+                    tv2.setTextColor(altcol);
 
-                sbhue.setProgress(hueval, true);
-                sbsaturation.setProgress(saturationval, true);
-                sbvalue.setProgress(valueval, true);
+                    sbhue.setProgress(hueval);
+                    sbsat.setProgress(saturationval);
+                    sbval.setProgress(valueval);
 
-                tv3.setTextColor(altcol);
-                tv4.setTextColor(altcol);
+                    tv3.setTextColor(altcol);
+                    tv4.setTextColor(altcol);
+                }
             }
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {}
@@ -86,29 +88,31 @@ public class MainActivity extends AppCompatActivity {
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 greenval = progress;
 
-                cl.setBackgroundColor(Color.rgb(redval, greenval, blueval));
+                if(fromUser) {
+                    cl.setBackgroundColor(Color.rgb(redval, greenval, blueval));
 
-                int col = Color.rgb(redval, greenval, blueval);
-                int altcol = Color.rgb(255 - redval, 255 - greenval, 255 - blueval);
-                float[] hsv = new float[3];
-                Color.colorToHSV(col, hsv);
+                    int col = Color.rgb(redval, greenval, blueval);
+                    int altcol = Color.rgb(255 - redval, 255 - greenval, 255 - blueval);
+                    float[] hsv = new float[3];
+                    Color.colorToHSV(col, hsv);
 
-                tv1.setText(redval + " " + greenval + " " + blueval);
-                tv1.setTextColor(altcol);
+                    tv1.setText(redval + " " + greenval + " " + blueval);
+                    tv1.setTextColor(altcol);
 
-                hueval = Math.round(hsv[0]);
-                saturationval = Math.round(hsv[1] * 100);
-                valueval = Math.round(hsv[2] * 100);
+                    hueval = Math.round(hsv[0]);
+                    saturationval = Math.round(hsv[1] * 100);
+                    valueval = Math.round(hsv[2] * 100);
 
-                tv2.setText(hueval + " " + saturationval + " " + valueval);
-                tv2.setTextColor(altcol);
+                    tv2.setText(hueval + " " + saturationval + " " + valueval);
+                    tv2.setTextColor(altcol);
 
-                sbhue.setProgress(hueval, true);
-                sbsaturation.setProgress(saturationval, true);
-                sbvalue.setProgress(valueval, true);
+                    sbhue.setProgress(hueval);
+                    sbsat.setProgress(saturationval);
+                    sbval.setProgress(valueval);
 
-                tv3.setTextColor(altcol);
-                tv4.setTextColor(altcol);
+                    tv3.setTextColor(altcol);
+                    tv4.setTextColor(altcol);
+                }
             }
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {}
@@ -123,29 +127,31 @@ public class MainActivity extends AppCompatActivity {
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 blueval = progress;
 
-                cl.setBackgroundColor(Color.rgb(redval, greenval, blueval));
+                if(fromUser) {
+                    cl.setBackgroundColor(Color.rgb(redval, greenval, blueval));
 
-                int col = Color.rgb(redval, greenval, blueval);
-                int altcol = Color.rgb(255 - redval, 255 - greenval, 255 - blueval);
-                float[] hsv = new float[3];
-                Color.colorToHSV(col, hsv);
+                    int col = Color.rgb(redval, greenval, blueval);
+                    int altcol = Color.rgb(255 - redval, 255 - greenval, 255 - blueval);
+                    float[] hsv = new float[3];
+                    Color.colorToHSV(col, hsv);
 
-                tv1.setText(redval + " " + greenval + " " + blueval);
-                tv1.setTextColor(altcol);
+                    tv1.setText(redval + " " + greenval + " " + blueval);
+                    tv1.setTextColor(altcol);
 
-                hueval = Math.round(hsv[0]);
-                saturationval = Math.round(hsv[1] * 100);
-                valueval = Math.round(hsv[2] * 100);
+                    hueval = Math.round(hsv[0]);
+                    saturationval = Math.round(hsv[1] * 100);
+                    valueval = Math.round(hsv[2] * 100);
 
-                tv2.setText(hueval + " " + saturationval + " " + valueval);
-                tv2.setTextColor(altcol);
+                    tv2.setText(hueval + " " + saturationval + " " + valueval);
+                    tv2.setTextColor(altcol);
 
-                sbhue.setProgress(hueval, true);
-                sbsaturation.setProgress(saturationval, true);
-                sbvalue.setProgress(valueval, true);
+                    sbhue.setProgress(hueval);
+                    sbsat.setProgress(saturationval);
+                    sbval.setProgress(valueval);
 
-                tv3.setTextColor(altcol);
-                tv4.setTextColor(altcol);
+                    tv3.setTextColor(altcol);
+                    tv4.setTextColor(altcol);
+                }
             }
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {}
@@ -158,62 +164,74 @@ public class MainActivity extends AppCompatActivity {
             @SuppressLint("SetTextI18n")
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                if (progress == 360){
-                    progress = 0;
-                    sbhue.setProgress(0);
-                }
                 hueval = progress;
 
-                float[] hsv = {((float) hueval), ((float) saturationval)/100, ((float) valueval)/100};
-                int col = Color.HSVToColor(hsv);
+                if(fromUser) {
+                    float[] hsv = {((float) hueval), ((float) saturationval) / 100, ((float) valueval) / 100};
+                    int col = Color.HSVToColor(hsv);
+                    int altcol = Color.rgb(255 - redval, 255 - greenval, 255 - blueval);
 
-//                cl.setBackgroundColor(col);
+                    cl.setBackgroundColor(col);
 
-                redval = Color.red(col);
-                greenval = Color.green(col);
-                blueval = Color.blue(col);
+                    redval = Color.red(col);
+                    greenval = Color.green(col);
+                    blueval = Color.blue(col);
 
-//                tv1.setText(redval + " " + greenval + " " + blueval);
-//                tv1.setTextColor(Color.rgb(255 - redval, 255 - greenval, 255 - blueval));
-//
-//                tv2.setText(hueval + " " + saturationval + " " + valueval);
-//                tv2.setTextColor(Color.rgb(255 - redval, 255 - greenval, 255 - blueval));
+                    tv1.setText(redval + " " + greenval + " " + blueval);
+                    tv1.setTextColor(altcol);
 
-                sbred.setProgress(redval, true);
-                sbgreen.setProgress(greenval, true);
-                sbblue.setProgress(blueval, true);
+                    tv2.setText(hueval + " " + saturationval + " " + valueval);
+                    tv2.setTextColor(altcol);
+
+                    sbred.setProgress(redval    );
+                    sbgreen.setProgress(greenval);
+                    sbblue.setProgress(blueval  );
+
+                    tv3.setTextColor(altcol);
+                    tv4.setTextColor(altcol);
+                }
             }
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {}
             @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {}
+            public void onStopTrackingTouch(SeekBar seekBar) {
+                if (sbhue.getProgress() == 360){
+                    sbhue.setProgress(0);
+                }
+            }
         });
 
-        sbsaturation.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+        sbsat.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @RequiresApi(api = Build.VERSION_CODES.N)
             @SuppressLint("SetTextI18n")
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 saturationval = progress;
 
-                float[] hsv = {((float) hueval), ((float) saturationval)/100, ((float) valueval)/100};
-                int col = Color.HSVToColor(hsv);
+                if(fromUser) {
+                    float[] hsv = {((float) hueval), ((float) saturationval) / 100, ((float) valueval) / 100};
+                    int col = Color.HSVToColor(hsv);
+                    int altcol = Color.rgb(255 - redval, 255 - greenval, 255 - blueval);
 
-//                cl.setBackgroundColor(col);
+                    cl.setBackgroundColor(col);
 
-                redval = Color.red(col);
-                greenval = Color.green(col);
-                blueval = Color.blue(col);
+                    redval = Color.red(col);
+                    greenval = Color.green(col);
+                    blueval = Color.blue(col);
 
-//                tv1.setText(redval + " " + greenval + " " + blueval);
-//                tv1.setTextColor(Color.rgb(255 - redval, 255 - greenval, 255 - blueval));
-//
-//                tv2.setText(hueval + " " + saturationval + " " + valueval);
-//                tv2.setTextColor(Color.rgb(255 - redval, 255 - greenval, 255 - blueval));
+                    tv1.setText(redval + " " + greenval + " " + blueval);
+                    tv1.setTextColor(altcol);
 
-                sbred.setProgress(redval, true);
-                sbgreen.setProgress(greenval, true);
-                sbblue.setProgress(blueval, true);
+                    tv2.setText(hueval + " " + saturationval + " " + valueval);
+                    tv2.setTextColor(altcol);
+
+                    sbred.setProgress(redval    );
+                    sbgreen.setProgress(greenval);
+                    sbblue.setProgress(blueval  );
+
+                    tv3.setTextColor(altcol);
+                    tv4.setTextColor(altcol);
+                }
             }
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {}
@@ -221,31 +239,37 @@ public class MainActivity extends AppCompatActivity {
             public void onStopTrackingTouch(SeekBar seekBar) {}
         });
 
-        sbvalue.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+        sbval.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @SuppressLint("SetTextI18n")
             @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
                 valueval = progress;
 
-                float[] hsv = {((float) hueval), ((float) saturationval)/100, ((float) valueval)/100};
-                int col = Color.HSVToColor(hsv);
+                if(fromUser) {
+                    float[] hsv = {((float) hueval), ((float) saturationval) / 100, ((float) valueval) / 100};
+                    int col = Color.HSVToColor(hsv);
+                    int altcol = Color.rgb(255 - redval, 255 - greenval, 255 - blueval);
 
-//                cl.setBackgroundColor(col);
+                    cl.setBackgroundColor(col);
 
-                redval = Color.red(col);
-                greenval = Color.green(col);
-                blueval = Color.blue(col);
+                    redval = Color.red(col);
+                    greenval = Color.green(col);
+                    blueval = Color.blue(col);
 
-//                tv1.setText(redval + " " + greenval + " " + blueval);
-//                tv1.setTextColor(Color.rgb(255 - redval, 255 - greenval, 255 - blueval));
-//
-//                tv2.setText(hueval + " " + saturationval + " " + valueval);
-//                tv2.setTextColor(Color.rgb(255 - redval, 255 - greenval, 255 - blueval));
+                    tv1.setText(redval + " " + greenval + " " + blueval);
+                    tv1.setTextColor(altcol);
 
-                sbred.setProgress(redval, true);
-                sbgreen.setProgress(greenval, true);
-                sbblue.setProgress(blueval, true);
+                    tv2.setText(hueval + " " + saturationval + " " + valueval);
+                    tv2.setTextColor(altcol);
+
+                    sbred.setProgress(redval    );
+                    sbgreen.setProgress(greenval);
+                    sbblue.setProgress(blueval  );
+
+                    tv3.setTextColor(altcol);
+                    tv4.setTextColor(altcol);
+                }
             }
             @Override
             public void onStartTrackingTouch(SeekBar seekBar) {}
