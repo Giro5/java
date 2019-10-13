@@ -2,8 +2,8 @@ package com.example.myapplication;
 
 import android.annotation.SuppressLint;
 import android.content.res.Resources;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
+import android.graphics.*;
+import android.graphics.drawable.*;
 import android.os.Build;
 import android.view.Window;
 import android.widget.SeekBar;
@@ -276,6 +276,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onStopTrackingTouch(SeekBar seekBar) {}
         });
+
+        GradientDrawable drawable = new GradientDrawable(GradientDrawable.Orientation.LEFT_RIGHT,
+             new int[] { Color.RED, Color.YELLOW, Color.GREEN, Color.CYAN, Color.BLUE, Color.MAGENTA, Color.RED });
+
+        sbhue.setBackground(drawable);
     }
 
 
