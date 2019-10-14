@@ -18,8 +18,5 @@
     <style name="SeekBarBlue">
         <item name="colorAccent">#0000ff</item>
     </style>
-    <style name="SeekBarHue" parent="Widget.AppCompat.SeekBar">
-        <item name="android:backgroundTint">@android:color/transparent</item>
-    </style>
 
 </resources>

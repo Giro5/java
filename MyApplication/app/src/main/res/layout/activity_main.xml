@@ -56,7 +56,8 @@
             app:layout_constraintVertical_bias="0.4"
             app:layout_constraintHorizontal_bias="0.5"
             android:max="255"
-            android:theme="@style/SeekBarBlue"/>
+            android:theme="@style/SeekBarBlue"
+    />
     <SeekBar
             android:layout_width="313dp"
             android:layout_height="22dp"
@@ -68,7 +69,8 @@
             app:layout_constraintVertical_bias="0.3"
             app:layout_constraintHorizontal_bias="0.5"
             android:max="255"
-            android:theme="@style/SeekBarGreen"/>
+            android:theme="@style/SeekBarGreen"
+    />
     <SeekBar
             android:layout_width="314dp"
             android:layout_height="22dp"
@@ -80,7 +82,8 @@
             app:layout_constraintVertical_bias="0.2"
             app:layout_constraintHorizontal_bias="0.5"
             android:max="255"
-            android:theme="@style/SeekBarRed"/>
+            android:theme="@style/SeekBarRed"
+    />
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -94,7 +97,8 @@
             android:textStyle="bold"
             android:textColor="@android:color/white"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintVertical_bias="0.47"/>
+            app:layout_constraintVertical_bias="0.47"
+    />
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -136,7 +140,8 @@
             android:textStyle="bold"
             android:textColor="@android:color/white"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintVertical_bias="0.53"/>
+            app:layout_constraintVertical_bias="0.53"
+    />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
