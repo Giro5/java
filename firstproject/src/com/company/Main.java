@@ -5,6 +5,19 @@ package com.company;
 public class Main {
 
     public static void main(String[] args) {
+        // int n = 5;
+        // int[] a = new int[n];
+
+        for (int i = 0; i < 4; i++) {
+            int s = 0;
+            for (int j = 0; j < i; j++)
+                s = s + i + j;
+            System.out.print(s);
+        }
+
+        // for (int i : a) {
+        // System.out.println(i);
+        // }
         // data type
         // primitive type
         // byte = -128 to 127
@@ -140,6 +153,43 @@ public class Main {
         // System.out.println(tc3.getT().bo);
         // CLimit<TypeDefault> cl = new CLimit<>();
         // CLimit<TypeValue> cl2 = new CLimit<>();
+    }
+}
+
+class Zadanie_16_5 {
+    public static void main(String[] args) {
+        for (int i = 2; i < 100; i++) {
+            for (int j = 10; j < 100; j++) {
+                if (j % i == 0)
+                    System.out.print(j + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+class Zadanie_16_6 {
+    public static void main(String[] args) {
+        for (int i = 0; i <= 10; i++) {
+            for (int j = 0; j <= 20; j++) {
+                if (i * 10 + j * 5 == 100)
+                    System.out.println(i + " bulls, " + j + " cows");
+            }
+        }
+    }
+}
+
+class Zadanie_16_8 {
+    public static void main(String[] args) {
+        for (int i = 1; i <= 75; i++) {
+            System.out.print(i + ": ");
+            int sum = 0;
+            for (int j = 1; j <= i / 2; j++) {
+                if (i % j == 0)
+                    sum += j;
+            }
+            System.out.println(sum);
+        }
     }
 }
 
