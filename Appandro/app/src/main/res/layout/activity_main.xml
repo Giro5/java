@@ -5,18 +5,9 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainActivity">
+        tools:context=".MainActivity"
+        android:id="@+id/Layout1">
 
-    <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="23dp"
-            android:text="Hello World!"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.112" android:id="@+id/textView"
-    />
     <Button
             android:text="Second Activity Start"
             android:layout_width="wrap_content"
@@ -26,26 +17,43 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintHorizontal_bias="0.95"
-            app:layout_constraintVertical_bias="0.976"/>
+            app:layout_constraintHorizontal_bias="0.988"
+            app:layout_constraintVertical_bias="0.975"/>
     <EditText
-            android:layout_width="130dp"
-            android:layout_height="42dp"
+            android:layout_width="171dp"
+            android:layout_height="47dp"
             android:inputType="textPersonName"
             android:text=""
+            android:hint="Введите текст"
             android:ems="10"
             android:id="@+id/editText2"
-            app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toBottomOf="@+id/textView"
-            app:layout_constraintBottom_toTopOf="@+id/button" app:layout_constraintVertical_bias="0.463"
-            style="@android:style/Widget.Material.Light.EditText"/>
+            style="@android:style/Widget.Material.Light.EditText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.006" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.975"/>
     <Button
             android:text="Button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/button36" app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintHorizontal_bias="0.792" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editText2" app:layout_constraintBottom_toTopOf="@+id/button"
-            app:layout_constraintVertical_bias="0.896"/>
+            app:layout_constraintHorizontal_bias="0.993" app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="0.822"/>
+    <ImageView
+            android:layout_width="386dp"
+            android:layout_height="409dp" app:srcCompat="?attr/actionBarItemBackground"
+            android:id="@+id/imageView"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.408"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:layout_constraintVertical_chainStyle="packed"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+    <androidx.constraintlayout.widget.Guideline
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/guideline"
+            app:layout_constraintGuide_begin="20dp"
+            android:orientation="vertical"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
