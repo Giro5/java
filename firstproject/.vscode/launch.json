@@ -6,6 +6,18 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - sqrthalfone",
+            "request": "launch",
+            "mainClass": "com.company.sqrthalfone"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Main",
+            "request": "launch",
+            "mainClass": "com.company.Main"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - Zadanie_16_8",
             "request": "launch",
             "mainClass": "com.company.Zadanie_16_8",
