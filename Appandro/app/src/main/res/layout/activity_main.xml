@@ -6,8 +6,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".MainActivity"
-        android:id="@+id/Layout1">
-
+        android:id="@+id/Layout1"
+        >
     <Button
             android:text="Second Activity Start"
             android:layout_width="wrap_content"
